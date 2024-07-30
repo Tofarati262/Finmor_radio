@@ -10,7 +10,7 @@ function App() {
             "http://localhost:5000/discordauth/api/auth/discord")
         }
       >
-        Discord login
+        Discord login1
       </button>
       <button
         onClick={() =>
