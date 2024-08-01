@@ -1,0 +1,385 @@
+@media (min-width: 475px) {
+  .board,
+  .Finmor-logo,
+  .range,
+  .Navbar,
+  .player,
+  .left-player,
+  .right-player {
+    box-sizing: border-box;
+  }
+  .board {
+    max-width: 100%;
+  }
+  .Finmor-logo {
+    font-size: 1.5rem;
+  }
+  .range {
+    width: 8vh;
+  }
+  .Navbar {
+    gap: 19rem;
+  }
+  .player {
+    gap: 1rem;
+    width: 420px;
+  }
+  .center-player {
+    transform: scale(0.8);
+  }
+  .text {
+    transform: scale(0.6);
+  }
+  .left-player img {
+    width: 5rem;
+  }
+  .left-player,
+  .right-player {
+    gap: 0.2rem;
+  }
+  .volume {
+    display: none;
+  }
+  .q {
+    display: none;
+  }
+}
+
+@media (min-width: 690px) {
+  .board,
+  .Finmor-logo,
+  .range,
+  .Navbar,
+  .player,
+  .left-player,
+  .right-player {
+    box-sizing: border-box;
+  }
+  .board {
+    max-width: 100%;
+  }
+  .Finmor-logo {
+    font-size: 2rem;
+  }
+  .range {
+    width: 8vh;
+  }
+  .Navbar {
+    gap: 20rem;
+  }
+  .player {
+    gap: 3rem;
+    width: 500px;
+  }
+  .center-player {
+    transform: scale(0.9);
+  }
+  .text {
+    transform: scale(0.6);
+  }
+  .left-player img {
+    width: 5rem;
+  }
+  .left-player,
+  .right-player {
+    gap: 0.2rem;
+  }
+  .volume {
+    display: none;
+  }
+  .q {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .board,
+  .Finmor-logo,
+  .range,
+  .Navbar,
+  .player,
+  .left-player,
+  .right-player {
+    box-sizing: border-box;
+  }
+  .board {
+    max-width: 100%;
+  }
+  .Finmor-logo {
+    font-size: 2.5rem;
+  }
+  .range {
+    width: 14vh;
+  }
+  .Navbar {
+    gap: 30rem;
+  }
+  .player {
+    gap: 4rem;
+    width: 700px;
+  }
+  .center-player {
+    transform: scale(0.9);
+  }
+  .text {
+    transform: scale(0.6);
+  }
+  .queue {
+    transform: scale(1.7);
+  }
+  .left-player img {
+    width: 5rem;
+  }
+  .left-player {
+    gap: 0.5rem;
+  }
+  .right-player {
+    gap: 2rem;
+  }
+
+  .volume {
+    display: flex;
+    width: 6rem;
+  }
+  .Rangy {
+    width: 5rem;
+  }
+  .q {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .board,
+  .Finmor-logo,
+  .range,
+  .Navbar,
+  .player,
+  .left-player,
+  .right-player {
+    box-sizing: border-box;
+  }
+  .board {
+    max-width: 100%;
+  }
+  .Finmor-logo {
+    font-size: 2.5rem; /* Adjusted for larger screens */
+  }
+  .range {
+    width: 21vh; /* Adjusted for larger screens */
+  }
+  .Navbar {
+    gap: 40rem; /* Adjusted for larger screens */
+  }
+  .player {
+    gap: 4rem; /* Adjusted for larger screens */
+    width: 800px; /* Adjusted for larger screens */
+  }
+  .center-player {
+    transform: scale(0.95); /* Adjusted for larger screens */
+  }
+  .text {
+    transform: scale(0.7); /* Adjusted for larger screens */
+  }
+  .queue {
+    transform: scale(1.75); /* Adjusted for larger screens */
+  }
+  .left-player img {
+    width: 5rem; /* Adjusted for larger screens */
+  }
+  .left-player {
+    gap: 0.6rem; /* Adjusted for larger screens */
+  }
+  .right-player {
+    gap: 2.5rem; /* Adjusted for larger screens */
+  }
+
+  .volume {
+    display: flex;
+    width: 7rem; /* Adjusted for larger screens */
+  }
+  .Rangy {
+    width: 6rem; /* Adjusted for larger screens */
+  }
+}
+
+@media (min-width: 1280px) {
+  .board,
+  .Finmor-logo,
+  .range,
+  .Navbar,
+  .player,
+  .left-player,
+  .right-player {
+    box-sizing: border-box;
+  }
+  .board {
+    max-width: 100%;
+  }
+  .Finmor-logo {
+    font-size: 2.5rem;
+  }
+  .range {
+    width: 35rem;
+  }
+  .Navbar {
+    gap: 60rem;
+  }
+  .player {
+    gap: 4rem;
+    width: 1200px;
+  }
+  .center-player {
+    transform: scale(0.9);
+  }
+  .text {
+    transform: scale(0.7);
+    font-size: 20px;
+  }
+  .queue {
+    transform: scale(1.8);
+  }
+  .left-player img {
+    width: 5rem;
+  }
+  .left-player {
+    gap: 0.1rem;
+  }
+  .right-player {
+    gap: 2rem;
+  }
+
+  .volume {
+    display: flex;
+    width: 8rem;
+  }
+  .Rangy {
+    width: 5rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .board,
+  .Finmor-logo,
+  .range,
+  .Navbar,
+  .player,
+  .left-player,
+  .right-player {
+    box-sizing: border-box;
+  }
+  .board {
+    max-width: 100%;
+  }
+  .Finmor-logo {
+    font-size: 3rem; /* Adjusted font size for larger screens */
+  }
+  .range {
+    width: 65rem; /* Increased width for better visibility on large screens */
+  }
+  .Navbar {
+    gap: 1000px; /* Increased gap for larger screens */
+  }
+  .player {
+    gap: 100px;
+    width: 1100px; /* Adjusted width for larger screens */
+  }
+  .center-player {
+    transform: scale(0.8); /* Slightly adjusted scale for larger screens */
+  }
+  .range {
+    width: 900px;
+  }
+  .text {
+    transform: scale(0.75); /* Adjusted scale for text on large screens */
+    font-size: 15px; /* Increased font size for better readability on large screens */
+  }
+  .queue {
+    transform: scale(2); /* Adjusted scale for queue on large screens */
+  }
+  .left-player img {
+    margin-right: 1rem;
+    width: 5rem; /* Increased image width for larger screens */
+    height: 4rem;
+  }
+  .left-player {
+    gap: 0.2rem; /* Slightly increased gap for larger screens */
+  }
+  .right-player {
+    gap: 0.5rem; /* Increased gap for larger screens */
+  }
+
+  .volume {
+    display: flex;
+    width: 10rem; /* Increased width for volume controls on large screens */
+  }
+  .Rangy {
+    width: 6rem; /* Increased width for Rangy on large screens */
+  }
+  .q {
+    display: flex;
+  }
+}
+
+@media (min-width: 2000px) {
+  .board,
+  .Finmor-logo,
+  .range,
+  .Navbar,
+  .player,
+  .left-player,
+  .right-player {
+    box-sizing: border-box;
+  }
+  .board {
+    max-width: 100%;
+  }
+  .Finmor-logo {
+    font-size: 3rem; /* Adjusted font size for larger screens */
+  }
+  .range {
+    width: 65rem; /* Increased width for better visibility on large screens */
+  }
+  .Navbar {
+    gap: 1200px; /* Increased gap for larger screens */
+  }
+  .player {
+    gap: 1rem; /* Increased gap for better spacing on large screens */
+    width: 1200px; /* Adjusted width for larger screens */
+  }
+  .center-player {
+    transform: scale(0.8); /* Slightly adjusted scale for larger screens */
+  }
+  .range {
+    width: 900px;
+  }
+  .text {
+    transform: scale(0.75); /* Adjusted scale for text on large screens */
+    font-size: 15px; /* Increased font size for better readability on large screens */
+  }
+  .queue {
+    transform: scale(2); /* Adjusted scale for queue on large screens */
+  }
+  .left-player img {
+    margin-right: 1rem;
+    width: 5rem; /* Increased image width for larger screens */
+    height: 4rem;
+  }
+  .left-player {
+    gap: 0.2rem; /* Slightly increased gap for larger screens */
+  }
+  .right-player {
+    gap: 0.5rem; /* Increased gap for larger screens */
+  }
+
+  .volume {
+    display: flex;
+    width: 10rem; /* Increased width for volume controls on large screens */
+  }
+  .Rangy {
+    width: 6rem; /* Increased width for Rangy on large screens */
+  }
+  .q {
+    height: 77.5rem;
+  }
+}

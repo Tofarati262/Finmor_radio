@@ -5,8 +5,14 @@ const router = express.Router(); // Use express.Router()
 const gUser = require("../models/googleshcema");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const { encrypt } = require("../utils/utils");
-
+const jwt = require("jsonwebtoken");
 const Oauth2schema = require("../models/Oauth2shcema");
+const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
+
+router.use(bodyParser.urlencoded({ extended: true }));
+router.use(bodyParser.json());
+router.use(cookieParser());
 
 passport.use(
   new GoogleStrategy(
@@ -59,6 +65,45 @@ passport.use(
     }
   )
 );
+const createAuthTokens = (user) => {
+  const refreshToken = jwt.sign(
+    { userId: user.id, refreshTokenVersion: user.refreshTokenVersion },
+    process.env.REFRESHTOKEN_SECRET,
+    {
+      expiresIn: "7d",
+    }
+  );
+
+  const accessToken = jwt.sign({ userId: user.id }, process.env.TOKEN_SECRET, {
+    expiresIn: "15min",
+  });
+
+  return { refreshToken, accessToken };
+};
+
+// __prod__ is a boolean that is true when the NODE_ENV is "production"
+const cookieOpts = {
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production",
+  sameSite: "lax",
+  path: "/",
+  maxAge: 1000 * 60 * 60 * 24 * 365 * 10, // 10 years
+};
+
+const sendAuthCookies = (res, user) => {
+  const { accessToken, refreshToken } = createAuthTokens(user);
+  res.cookie("id", accessToken, cookieOpts);
+  res.cookie("rid", refreshToken, cookieOpts);
+};
+
+const verifyRefreshToken = (token) => {
+  try {
+    return jwt.verify(token, process.env.REFRESHTOKEN_SECRET);
+  } catch (error) {
+    console.error("Access token verification failed:", error);
+    throw error;
+  }
+};
 
 router.get(
   "/auth/google",
@@ -70,8 +115,20 @@ router.get(
   passport.authenticate("google", { failureRedirect: "/auth/google" }),
   function (req, res) {
     // Successful authentication, redirect home.
-    res.send("Successful Authorization");
+    sendAuthCookies(res, req.user);
+    console.log("Successful Authorization");
+    res.redirect("http://localhost:3000/audioplayer");
   }
 );
+
+router.get("/newpage", (req, res) => {
+  const token = req.cookies.rid;
+  try {
+    const decoded = verifyRefreshToken(token);
+    res.json({ userId: decoded.userId });
+  } catch (error) {
+    res.status(401).json({ message: "Invalid token" });
+  }
+});
 
 module.exports = router;

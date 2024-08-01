@@ -1,0 +1,36 @@
+.queued_box {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3rem;
+  align-items: baseline;
+
+  text-align: center;
+}
+
+/* Inside Queuedsongs.css */
+.cover_image {
+  width: 4rem; /* Adjust size as needed */
+  border-radius: 5px;
+  height: 3rem;
+}
+
+/* Inside Queuedsongs.css */
+.queued_song {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px; /* Space between each queued song */
+  padding: 5px; /* Apply padding around each song */
+  width: 19rem;
+  height: 3rem;
+  border-radius: 11px; /* Optional: rounded corners for visual appeal */
+}
+
+.song_info {
+  display: flex;
+  flex-direction: column;
+
+  transform: scale(0.6);
+  align-items: baseline;
+  text-align: center;
+  margin-bottom: 3rem;
+}

@@ -110,8 +110,7 @@ router.get(
     } catch (err) {
       res.json({ message: err });
     }
-
-    res.send("Successful authentication");
+    res.redirect("http://localhost:3000/audioplayer");
   }
 );
 
