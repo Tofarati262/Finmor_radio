@@ -104,6 +104,26 @@ const verifyRefreshToken = (token) => {
     throw error;
   }
 };
+passport.serializeUser((user, done) => {
+  console.log("serializing user....");
+  console.log(user);
+  done(null, user.id);
+});
+
+passport.deserializeUser(async (id, done) => {
+  console.log("deserializing user....");
+
+  try {
+    let foundid = await gUser.findById(id);
+    if (!foundid) throw new Error("User not found");
+
+    console.log("id was found", foundid);
+    done(null, foundid);
+  } catch (err) {
+    console.error("desrializing failed", err);
+    done(err, null);
+  }
+});
 
 router.get(
   "/auth/google",
@@ -122,12 +142,17 @@ router.get(
 );
 
 router.get("/newpage", (req, res) => {
-  const token = req.cookies.rid;
-  try {
-    const decoded = verifyRefreshToken(token);
-    res.json({ userId: decoded.userId });
-  } catch (error) {
-    res.status(401).json({ message: "Invalid token" });
+  if (req.user) {
+    console.log(req.user);
+    const token = req.cookies.rid;
+    try {
+      const decoded = verifyRefreshToken(token);
+      res.json({ userId: decoded.userId });
+    } catch (error) {
+      res.status(401).json({ message: "Invalid token" });
+    }
+  } else {
+    res.status(401);
   }
 });
 

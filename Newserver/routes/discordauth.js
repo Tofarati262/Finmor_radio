@@ -46,14 +46,6 @@ passport.use(
   )
 );
 
-passport.serializeUser((user, done) => {
-  done(null, user);
-});
-
-passport.deserializeUser((obj, done) => {
-  done(null, obj);
-});
-
 const createAuthTokens = (user) => {
   const refreshToken = jwt.sign(
     { userId: user.id, refreshTokenVersion: user.refreshTokenVersion },
@@ -69,6 +61,26 @@ const createAuthTokens = (user) => {
 
   return { refreshToken, accessToken };
 };
+passport.serializeUser((user, done) => {
+  console.log("serializing user....");
+  console.log(user);
+  done(null, user.id);
+});
+
+passport.deserializeUser(async (id, done) => {
+  console.log("deserializing user....");
+
+  try {
+    let foundid = await dUser.findById(id);
+    if (!foundid) throw new Error("User not found");
+
+    console.log("id was found", foundid);
+    done(null, foundid);
+  } catch (err) {
+    console.error("desrializing failed", err);
+    done(err, null);
+  }
+});
 
 // __prod__ is a boolean that is true when the NODE_ENV is "production"
 const cookieOpts = {

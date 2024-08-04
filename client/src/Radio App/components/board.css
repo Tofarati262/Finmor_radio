@@ -40,9 +40,6 @@
   .volume {
     display: none;
   }
-  .q {
-    display: none;
-  }
 }
 
 @media (min-width: 690px) {
@@ -85,9 +82,6 @@
     gap: 0.2rem;
   }
   .volume {
-    display: none;
-  }
-  .q {
     display: none;
   }
 }
@@ -143,9 +137,6 @@
   }
   .Rangy {
     width: 5rem;
-  }
-  .q {
-    display: none;
   }
 }
 
@@ -255,6 +246,12 @@
   }
   .Rangy {
     width: 5rem;
+  }
+}
+
+@media (max-width: 1220px) {
+  .q {
+    display: none;
   }
 }
 
