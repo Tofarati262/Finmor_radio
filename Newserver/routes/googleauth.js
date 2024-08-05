@@ -136,7 +136,7 @@ router.get(
   function (req, res) {
     // Successful authentication, redirect home.
     sendAuthCookies(res, req.user);
-    console.log("Successful Authorization");
+    console.log(`${req.user.id} is logged in`);
     res.redirect("http://localhost:3000/audioplayer");
   }
 );

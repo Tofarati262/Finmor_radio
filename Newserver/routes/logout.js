@@ -7,7 +7,7 @@ router.post("/logout", (req, res) => {
       return next(err);
     }
     res.status(200).json({ message: "Logged out successfully" });
-    console.log("logged out");
+    console.log("logged out", req.user);
   });
 });
 

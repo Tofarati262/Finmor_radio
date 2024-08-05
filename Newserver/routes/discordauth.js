@@ -122,6 +122,7 @@ router.get(
     } catch (err) {
       res.json({ message: err });
     }
+    console.log(`${req.user.id} is logged in`);
     res.redirect("http://localhost:3000/audioplayer");
   }
 );
