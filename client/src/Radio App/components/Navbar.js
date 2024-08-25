@@ -1,7 +1,6 @@
 import React from "react";
-import { IoMdSettings } from "react-icons/io";
-import { CiLogout } from "react-icons/ci";
-
+import "./Navbar.css";
+import profile from "./pictures/Pic1.jpg"
 const Navbar = () => {
   const handleLogout = async () => {
     console.log("trying");
@@ -24,15 +23,15 @@ const Navbar = () => {
       console.error("Error:", error);
     }
   };
-
   return (
     <div className="Navbar">
       <div className="Finmor-logo">Finmor</div>
       <div className="Settings">
-        <CiLogout onClick={handleLogout} style={{ cursor: "pointer" }} />
+        <img className="profilePicture" src={profile} alt="/"/>
       </div>
     </div>
   );
+  
 };
 
 export default Navbar;

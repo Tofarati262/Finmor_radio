@@ -1,0 +1,29 @@
+.Navbar {
+    margin-top: 1rem;
+    display: inline-flex;
+    gap: 10rem;
+    align-items: baseline;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgb(0, 0, 0, 0.6);
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+  
+  .Finmor-logo {
+    font-size: 2rem;
+  }
+  
+  .Settings {
+    transform: scale(1.5);
+    padding-right: 1rem;
+  }
+
+  .profilePicture{
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+    caret-color: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    
+  }
