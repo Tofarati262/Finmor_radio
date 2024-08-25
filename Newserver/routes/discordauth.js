@@ -61,26 +61,6 @@ const createAuthTokens = (user) => {
 
   return { refreshToken, accessToken };
 };
-passport.serializeUser((user, done) => {
-  console.log("serializing user....");
-  console.log(user);
-  done(null, user.id);
-});
-
-passport.deserializeUser(async (id, done) => {
-  console.log("deserializing user....");
-
-  try {
-    let foundid = await dUser.findById(id);
-    if (!foundid) throw new Error("User not found");
-
-    console.log("id was found", foundid);
-    done(null, foundid);
-  } catch (err) {
-    console.error("desrializing failed", err);
-    done(err, null);
-  }
-});
 
 // __prod__ is a boolean that is true when the NODE_ENV is "production"
 const cookieOpts = {
@@ -106,6 +86,27 @@ const verifyRefreshToken = (token) => {
   }
 };
 
+passport.serializeUser((user, done) => {
+  console.log("serializing user....");
+  console.log(user);
+  done(null, user.id);
+});
+
+passport.deserializeUser(async (id, done) => {
+  console.log("deserializing user....");
+
+  try {
+    let foundid = await dUser.findById(id);
+    if (!foundid) throw new Error("User not found");
+
+    console.log("id was found", foundid);
+    done(null, foundid);
+  } catch (err) {
+    console.error("desrializing failed", err);
+    done(err, null);
+  }
+});
+
 // Route to refresh tokens
 
 // Routes
@@ -122,7 +123,6 @@ router.get(
     } catch (err) {
       res.json({ message: err });
     }
-    console.log(`${req.user.id} is logged in`);
     res.redirect("http://localhost:3000/audioplayer");
   }
 );

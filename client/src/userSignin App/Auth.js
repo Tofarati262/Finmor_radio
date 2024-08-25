@@ -1,6 +1,6 @@
 import React from "react";
 
-function App() {
+function Auth() {
   return (
     <div>
       <h1>Welcome to the Front End</h1>
@@ -24,4 +24,4 @@ function App() {
   );
 }
 
-export default App;
+export default Auth;

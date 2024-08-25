@@ -133,10 +133,14 @@ router.get(
 router.get(
   "/api/redirect", // Ensure this route matches your Google Console setting
   passport.authenticate("google", { failureRedirect: "/auth/google" }),
-  function (req, res) {
-    // Successful authentication, redirect home.
+  async (req, res) => {
     sendAuthCookies(res, req.user);
-    console.log(`${req.user.id} is logged in`);
+
+    try {
+      verifyRefreshToken(req.cookies.rid);
+    } catch (err) {
+      res.json({ message: err });
+    }
     res.redirect("http://localhost:3000/audioplayer");
   }
 );
