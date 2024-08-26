@@ -15,6 +15,7 @@ function ProfileDrop() {
     
           if (response.ok) {
             console.log("Successfully logged out");
+            
             window.location.href = "http://localhost:3000/";
             // Perform any additional actions on successful logout, like redirecting the user
           } else {

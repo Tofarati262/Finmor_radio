@@ -39,10 +39,6 @@ app.use("/discordauth", Router);
 app.use("/googleauth", gRouter);
 app.use("/logout", LogoutRouter);
 
-app.get("/", (req, res) => {
-  res.redirect("/discordauth/api/auth/discord");
-});
-
 db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("database is live"));
 
