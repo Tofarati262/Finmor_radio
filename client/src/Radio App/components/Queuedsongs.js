@@ -43,13 +43,13 @@ const Queuedsongs = ({
             className="cover_image"
           />
           <div className="song_info">
-            <h3
+            <p
               style={{
                 color: index === ntrackid ? "green" : "initial",
               }}
             >
               {track.title}
-            </h3>
+            </p>
             <p>{track.author}</p>
           </div>
         </div>

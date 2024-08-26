@@ -124,6 +124,11 @@ code {
   margin-top: 2rem;
   transition: width 1s ease, opacity 1s ease, height 1s ease;
 }
+.queued_box > div:hover {
+  background-color: #a7a5a5; /* Dark background on hover */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+  color: #ffffff; /* White text color on hover for contrast */
+}
 
 .board.expanded .q {
   width: 0;
