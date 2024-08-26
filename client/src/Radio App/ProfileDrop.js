@@ -1,12 +1,19 @@
-import React from 'react';
-
+import {React,useContext} from 'react';
+import "./ProfileDrop.css";
+import { ProfilePicContext } from './components/context/picContext';
 function ProfileDrop() {
+    const {drop,setDrop}=useContext(ProfilePicContext);
   return (
-    <div className='List'>
-      <div className='Profile' />   {/* Allows users to change the profile picture and theme */}
-      <div className='Account' />  {/* Allows users to change to premium or change to artist account and upload */}
-      <div className='Logout'>Logout</div> {/*Allow users to logout of their account !remember to add and test jwt functionality */}
-    </div>
+    <  >
+{    drop&&( <div className="List">
+    <div className='Profile' >Profile</div> {/* Allows users to change the profile picture and theme */}
+    <div className='Account' >Account</div>  {/* Allows users to change to premium or change to artist account  */}
+    <div className="Upload">Upload</div>
+    <div className='Logout'>Logout</div> {/*Allow users to logout of their account !remember to add and test jwt functionality */}
+  </div>)
+}   
+  </>
+    
   );
 }
 

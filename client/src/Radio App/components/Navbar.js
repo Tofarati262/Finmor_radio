@@ -1,7 +1,10 @@
 import React from "react";
 import "./Navbar.css";
+import { useContext } from "react";
+import { ProfilePicContext } from "./context/picContext";
 import profile from "./pictures/Pic1.jpg"
 const Navbar = () => {
+  const {drop,setDrop}=useContext(ProfilePicContext);
   const handleLogout = async () => {
     console.log("trying");
     try {
@@ -27,7 +30,7 @@ const Navbar = () => {
     <div className="Navbar">
       <div className="Finmor-logo">Finmor</div>
       <div className="Settings">
-        <img className="profilePicture" src={profile} alt="/"/>
+        <img className="profilePicture" src={profile} onClick={()=>setDrop((prev) =>!prev)} alt="/"/>
       </div>
     </div>
   );

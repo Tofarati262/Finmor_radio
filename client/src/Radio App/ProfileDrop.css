@@ -1,0 +1,30 @@
+.List {
+    border: 1px solid #000000; /* Border color */
+    border-radius: 6px; /* Slightly smaller radius */
+    width: 80px; /* Reduced width */
+    margin-top: 8px; /* Adjusted margin */
+    margin-bottom: 1200px; /* Consider adjusting this if not needed */
+    margin-left: auto;
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Softer shadow for a smaller dropdown */
+    padding: 2px; /* Reduced padding inside the list */
+}
+
+.List > div {
+    font-size: 9px; /* Smaller font size */
+    padding: 2px 4px; /* Reduced padding for compact spacing */
+    cursor: pointer;
+    background-color: #ffffff; /* Background color for each item */
+    border-radius: 4px; /* Rounded corners for items */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+    margin-bottom: 1px; /* Reduced space between items */
+}
+
+.List > div:hover {
+    background-color: #353333; /* Dark background on hover */
+    color: #ffffff; /* White text color on hover for contrast */
+}
+
+.List > div:last-child {
+    margin-bottom: 0; /* Remove bottom margin from the last item */
+}

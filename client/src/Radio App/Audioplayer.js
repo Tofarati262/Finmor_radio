@@ -4,7 +4,11 @@ import Navbar from "./components/Navbar";
 import Player from "./components/player";
 import "./components/board.css";
 import Queuedsongs from "./components/Queuedsongs";
+import ProfileDrop from "./ProfileDrop";
 import { Tracks } from "./components/tracks/trackdata";
+
+import { ProfilePicContext } from "./components/context/picContext";
+import { createContext,useContext } from "react";
 
 const Audioplayer = () => {
   const audioref = useRef();
@@ -13,11 +17,14 @@ const Audioplayer = () => {
   const [openQueue, setOpenQueue] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
   const [trackid, setTrackid] = useState(0);
+  const [drop,setDrop]=useState(true);
 
   return (
     <div className="board">
       <div className="board-centered">
+        <ProfilePicContext.Provider value={{drop,setDrop}}>
         <Navbar />
+        <ProfileDrop/>
         <Player
           {...{
             audioref,
@@ -33,6 +40,8 @@ const Audioplayer = () => {
             setTrackid,
           }}
         />
+        </ProfilePicContext.Provider>
+ 
       </div>
       {openQueue && (
         <div className="q">
