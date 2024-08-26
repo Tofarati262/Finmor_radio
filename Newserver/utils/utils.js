@@ -8,4 +8,8 @@ function decrypt(token) {
   return CryptoJS.AES.decryptcrypt(token, process.env.CRYPTO_PASSPHRASE);
 }
 
-module.exports = { encrypt, decrypt };
+
+
+module.exports = { encrypt, decrypt};
+
+
