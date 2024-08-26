@@ -1,4 +1,4 @@
-@media (min-width: 475px) {
+@media (min-width: 300px) {
   .board,
   .Finmor-logo,
   .range,
@@ -21,8 +21,8 @@
     gap: 19rem;
   }
   .player {
-    gap: 1rem;
-    width: 420px;
+  
+    width:400px;
   }
   .center-player {
     transform: scale(0.8);

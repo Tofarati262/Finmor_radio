@@ -43,14 +43,15 @@ const Audioplayer = () => {
         </ProfilePicContext.Provider>
  
       </div>
-      {openQueue && (
-        <div className="q">
-          <Queuedsongs
-            Tracks={queue}
-            {...{ onsongend, setOnsongend, isPlaying, setIsPlaying, trackid }}
-          />
-        </div>
-      )}
+     
+      <div className={`q ${openQueue ? 'show' : 'hide'}`}>
+         <Queuedsongs
+        Tracks={queue}
+        {...{ onsongend, setOnsongend, isPlaying, setIsPlaying, trackid }}
+      />
+</div>
+
+     
     </div>
   );
 };
