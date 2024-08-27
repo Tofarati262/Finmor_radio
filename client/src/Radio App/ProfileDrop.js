@@ -1,9 +1,14 @@
 import {React,useContext} from 'react';
 import "./ProfileDrop.css";
 import { ProfilePicContext } from './components/context/picContext';
+import { MyContext } from '../index.js';
+
 function ProfileDrop() {
-    const {drop,setDrop}=useContext(ProfilePicContext);
+    const {drop,setDrop}=useContext(ProfilePicContext);    
+    const {logout,setLogout} = useContext(MyContext);
+
     const handleLogout = async () => {
+      setLogout(prev=>!prev)
         console.log("trying");
         try {
           const response = await fetch("http://localhost:5000/logout/logout", {
@@ -25,6 +30,8 @@ function ProfileDrop() {
           console.error("Error:", error);
         }
       };
+
+     
   return (
     <  >
   <div className={`List ${drop ? 'show': ''}`}>
