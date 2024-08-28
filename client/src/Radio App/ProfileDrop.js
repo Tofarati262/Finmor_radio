@@ -3,7 +3,7 @@ import "./ProfileDrop.css";
 import { ProfilePicContext } from './components/context/picContext';
 
 function ProfileDrop() {
-    const {drop,setDrop}=useContext(ProfilePicContext);    
+    const {drop}=useContext(ProfilePicContext);    
 
     const handleLogout = async () => {
         console.log("trying");
