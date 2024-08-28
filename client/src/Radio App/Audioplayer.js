@@ -8,7 +8,6 @@ import ProfileDrop from "./ProfileDrop";
 import { Tracks } from "./components/tracks/trackdata";
 
 import { ProfilePicContext } from "./components/context/picContext";
-import { MyContext } from "../index.js"; // Importing MyContext
 
 const Audioplayer = () => {
   const audioref = useRef();
@@ -20,12 +19,10 @@ const Audioplayer = () => {
   const [drop, setDrop] = useState(true);
 
   // Accessing MyContext
-  const { logout,setLogout } = useContext(MyContext);
 
   return (
     <div className="board">
       <div className="board-centered">
-        <MyContext.Provider value={{ logout,setLogout }}>
           <ProfilePicContext.Provider value={{ drop, setDrop }}>
             <Navbar />
             <ProfileDrop />
@@ -45,7 +42,6 @@ const Audioplayer = () => {
               }}
             />
           </ProfilePicContext.Provider>
-        </MyContext.Provider>
       </div>
 
       <div className={`q ${openQueue ? 'show' : 'hide'}`}>

@@ -36,3 +36,82 @@
     transform: rotate(360deg);
   }
 }
+
+/* Define the keyframes for the fadeInAndMoveUp animation */
+@keyframes fadeInAndMoveUp {
+  from {
+    transform: translateY(50px); /* Start position (below the original position) */
+    opacity: 0; /* Start with opacity 0 (invisible) */
+  }
+  to {
+    transform: translateY(0); /* End position (original position) */
+    opacity: 1; /* End with opacity 1 (visible) */
+  }
+}
+
+/* Style for the SignOut_Prompt */
+.SignOut_Prompt {
+  width: 260px;
+  background-color: rgba(255, 255, 0, 0.8); /* Yellow with transparency */
+  border: 1px solid black; /* Black border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px; /* Padding inside the box */
+  position: fixed; /* Fixed position to stay at the bottom */
+  bottom: 20px; /* Adjust this value to position it as needed */
+  animation: fadeInAndMoveUp 1s ease-out; /* Apply the fadeInAndMoveUp animation */
+  display: none; /* Hide by default */
+}
+
+.SignOut_Prompt.show {
+  display: block; /* Show when the 'show' class is applied */
+}
+
+.SignOut_Prompt.hidden {
+  display: none; /* Hide when the 'hidden' class is applied */
+}
+
+.SigninBox {
+  border: 1px solid black; /* Add a solid black border */
+  border-radius: 8px; /* Add border radius for rounded corners */
+  padding: 20px; /* Add padding inside the box */
+  width: 250px; /* Set a fixed width for the box */
+  background-color: #f9f9f9; /* Background color for the box (optional) */
+  margin-bottom: 20px; /* Add margin to separate from other elements */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Add shadow for a subtle effect */
+}
+
+.Signinbuttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the buttons horizontally */
+}
+
+.Signinbuttons > button {
+  width: 180px; /* Slimmer width for the buttons */
+  height: 35px; /* Slimmer height for the buttons */
+  margin: 5px 0; /* Reduce vertical spacing between buttons */
+  padding: 8px; /* Adjust padding for better spacing */
+  font-size: 14px; /* Adjust font size if necessary */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  color: white; /* Text color for buttons */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.discord {
+  background-color: #7289da; /* Purple color for Discord button */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.discord:hover {
+  background-color: #5a6fcb; /* Darker purple on hover */
+}
+
+.google {
+  background-color: #db4437; /* Red color for Google button */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.google:hover {
+  background-color: #c1351d; /* Darker red on hover */
+}
