@@ -48,16 +48,17 @@ const storage = multer.memoryStorage(); // Store files in memory as Buffer
 const upload = multer({ storage: storage });
 
 
-app.post("/uploads",upload.single("file"), async (req,res)=>{
+app.post("/uploads", upload.single("file"), async (req, res) => {
   try {
     const file = req.file; // Get the uploaded file from multer
+    const UserId = req.user?.id; // Ensure UserId is obtained from the authenticated user
 
-    if (!file) {
-      return res.status(400).send("No file uploaded.");
+    if (!file || !UserId) {
+      return res.status(400).send("No file uploaded or user not authenticated.");
     }
 
-    console.log("Received file:", file.originalname);
-    const sent = await main(file);
+    console.log(`User ${UserId} ${file.originalname} has been received`);
+    const sent = await main(file, UserId); // Pass UserId to the main function
 
     if (sent) {
       res.send(`File ${file.originalname} has been uploaded successfully.`);
@@ -69,6 +70,7 @@ app.post("/uploads",upload.single("file"), async (req,res)=>{
     console.error("Error in /uploads:", error);
   }
 });
+
 
 app.listen(
   process.env.PORT,
